@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 안녕, {{data.name}} </h1>
+    <h2> 랜덤번호는 무엇일까요? </h2>
+    <form action="/" method="post">
+        <input type="number" name="input_num">
+        <button type="submit"> 제출 </button>
+    </form>
+    {% if data.input_num %}
+    <h2> user의 답 : {{ data.input_num }}</h2>
+    {% if data.input_num == data.random_number %}
+    <h2> 축하해요! {{ data.count }} 과 일치해요! </h2>
+    {% elif data.input_num > data.random_number %}
+    <h2>Down</h2>
+    {% else %}
+    <h2>Up</h2>
+    {% endif %}
+</body>
+
+</html>
